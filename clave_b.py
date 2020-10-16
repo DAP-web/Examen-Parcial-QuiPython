@@ -125,24 +125,37 @@ Cliente
 
 
 class Banco:
-    def procesar(self):
-        return 0
+    def __init__(self):
+        self.ListaClientes = []
+        
+    def procesar(self,cliente):
+        self.ListaClientes.append(cliente)
 
     def abonosSanSalvador(self):
-        return 0
+        i=0
+        totalAbonosSS = 0
+        while i<=(len(self.ListaClientes)-1):
+            mytuple = self.ListaClientes[i]
+            if mytuple[3]=="abono" and mytuple[1]=="san salvador":
+                totalAbonosSS += mytuple[4]
+            i+=1
+        return float(totalAbonosSS)
 
     def abonosBalYRod(self):
-        return 0
+        i=0
+        totalBalYRod = 0
+        while i<=(len(self.ListaClientes)-1):
+            mytuple = self.ListaClientes[i]
+            if mytuple[3]=="abono" and (mytuple[0]=="balbino" or mytuple[0]=="rodrigo"):
+                totalBalYRod+=mytuple[4]
+            i+=1
+        return float(totalBalYRod)
 
 
 class Cliente:
-    def __init__(self,nombre,lugar,numCuenta,transaccion,monto):
-        self.nombre = nombre
-        self.lugar= lugar
-        self.numCuenta = numCuenta
-        self.transaccion = transaccion
-        self.monto = monto
-
+    def agregarCliente(self,nombre,lugar,numCuenta,transaccion,monto):
+        Cliente = (nombre,lugar,numCuenta,transaccion,monto)
+        return Cliente
 
 
 

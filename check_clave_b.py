@@ -53,14 +53,16 @@ else:
 
 # ejercicio 5 -->
 banco = Banco()
-# banco.procesar(Cliente("balbino", "san salvador", 1, "abono", 250.0))
-# banco.procesar(Cliente("rodrigo", "san salvador", 2, "retiro", 350.0))
-# banco.procesar(Cliente("marta", "san salvador", 3, "abono", 400.0))
-# banco.procesar(Cliente("rafael", "santa ana", 4, "abono", 500.0))
-# banco.procesar(Cliente("balbino", "la libertad", 1, "abono", 250.0))
-# banco.procesar(Cliente("marta", "san salvador", 3, "abono", 250.0))
-# banco.procesar(Cliente("rodrigo", "san salvador", 2, "abono", 100.0))
-banco.procesar()
+cliente = Cliente()
+
+banco.procesar(cliente.agregarCliente("balbino", "san salvador", 1, "abono", 250.0))
+banco.procesar(cliente.agregarCliente("rodrigo", "san salvador", 2, "retiro", 350.0))
+banco.procesar(cliente.agregarCliente("marta", "san salvador", 3, "abono", 400.0))
+banco.procesar(cliente.agregarCliente("rafael", "santa ana", 4, "abono", 500.0))
+banco.procesar(cliente.agregarCliente("balbino", "la libertad", 1, "abono", 250.0))
+banco.procesar(cliente.agregarCliente("marta", "san salvador", 3, "abono", 250.0))
+banco.procesar(cliente.agregarCliente("rodrigo", "san salvador", 2, "abono", 100.0))
+# banco.procesar()
 # total de abonos en san salvador
 totalAbonos = banco.abonosSanSalvador()
 if totalAbonos == 1000.0:
